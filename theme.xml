@@ -60,6 +60,26 @@
             <name locale="en_US">background</name>
             <name locale="ru_RU">Фон</name>
         </setting>
+        
+        <setting var="source_main_menu" control_type="select">
+            <value>shop_categories</value>
+            <name locale="en_US">Source for the main top menu</name>
+            <name locale="ru_RU">Источник для главного верхнего меню</name>
+            <options>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+                <option value="shop_categories">
+                    <name locale="en_US">Application «Shop» - categories</name>
+                    <name locale="ru_RU">Приложение «Магазин» - категории</name>
+                </option>
+            </options>
+        </setting>
     </settings>
      <locales>
         <locale>

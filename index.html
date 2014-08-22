@@ -32,11 +32,7 @@
             <!-- js -->
             <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>
             <script type="text/javascript" src="{$wa_theme_url}custom.js?v{$wa_theme_version}"></script>    
-            {$wa->js()} {* links active plugins JS *}
 
-            {include file="`$wa_active_theme_path`/head.html" inline}
-
-            {$wa->headJs()} {* links Google Analytics tracking code and current site's custom JS (Site app) *}
 
 
 
@@ -76,6 +72,34 @@
                             <script src="{$wa_theme_url}html5shiv.js" ></script>
                             <script src="{$wa_theme_url}respond.min.js" ></script>
                             <![endif]-->
+
+
+
+            <script type="text/javascript" src="{$wa_theme_url}jquery.easing.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}tools.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}global_modif.js" ></script>
+            {*<script type="text/javascript" src="{$wa_theme_url}global.js" ></script>*}
+            <script type="text/javascript" src="{$wa_theme_url}10-bootstrap.min.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}15-jquery.total-storage.min.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}15-jquery.uniform-modified.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}fancybox/jquery.fancybox.pack.js" ></script>
+            {*<script type="text/javascript" src="{$wa_theme_url}products-comparison.js" ></script>*}
+            {*<script type="text/javascript" src="{$wa_theme_url}ajax-cart.js" ></script>*}
+            <script type="text/javascript" src="{$wa_theme_url}jquery.scrollTo.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}jquery.serialScroll.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}bxslider/jquery.bxslider.js" ></script>
+            
+
+            
+
+
+
+            {$wa->js()} {* links active plugins JS *}
+
+            {include file="`$wa_active_theme_path`/head.html" inline}
+
+            {$wa->headJs()} {* links Google Analytics tracking code and current site's custom JS (Site app) *}
+
 
             <style>
                 {if !empty($theme_settings.bg_image)}
@@ -373,74 +397,66 @@
             </div> 
 
 
-
+            {*
             <script type="text/javascript">
-                var CUSTOMIZE_TEXTFIELD = 1;
-                var FancyboxI18nClose = 'Close';
-                var FancyboxI18nNext = 'Next';
-                var FancyboxI18nPrev = 'Previous';
-                var added_to_wishlist = 'Added to your wishlist.';
-                var ajaxsearch = true;
-                var baseDir = 'index.htm';
-                var baseUri = '';
-                var blocksearch_type = 'top';
-                var comparator_max_item = 2;
-                var comparedProductsIds = [];
-                var contentOnly = false;
-                var customizationIdMessage = 'Модификация №';
-                var delete_txt = 'Удалить';
-                var freeProductTranslation = 'Бесплатно!';
-                var freeShippingTranslation = 'Бесплатная доставка!';
-                var generated_date = 1407911867;
-                var homeslider_loop = true;
-                var homeslider_pause = '3000';
-                var homeslider_speed = '700';
-                var homeslider_width = '1170';
-                var id_lang = 3;
-                var img_dir = '';
-                var instantsearch = true;
-                var isGuest = 0;
-                var isLogged = 0;
-                var loggin_required = 'You must be logged in to manage your wishlist.';
-                var max_item = 'You cannot add more than 2 product(s) to the product comparison';
-                var min_item = 'Please select at least one product';
-                var mywishlist_url = '';
-                var nbItemsPerLine = 3;
-                var nbItemsPerLineMobile = 2;
-                var nbItemsPerLineTablet = 2;
-                var page_name = 'index';
-                var priceDisplayMethod = 1;
-                var priceDisplayPrecision = 2;
-                var quickView = true;
-                var removingLinkText = 'удалить товар из корзины';
-                var roundMode = 2;
-                var search_url = '';
-                var static_token = 'da54bada35f37b2cd72377705db97a29';
-                var token = '031d7dd0b5069a57a1b22a38a77067e0';
-                var usingSecureMode = false;
-                var wishlistProductsIds = false;</script>
-
-            <script type="text/javascript" src="{$wa_theme_url}jquery.easing.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}tools.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}global.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}10-bootstrap.min.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}15-jquery.total-storage.min.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}15-jquery.uniform-modified.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}fancybox/jquery.fancybox.pack.js" ></script>
-            {*<script type="text/javascript" src="{$wa_theme_url}products-comparison.js" ></script>*}
-            {*<script type="text/javascript" src="{$wa_theme_url}ajax-cart.js" ></script>*}
-            <script type="text/javascript" src="{$wa_theme_url}jquery.scrollTo.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}jquery.serialScroll.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}bxslider/jquery.bxslider.js" ></script>
+            var CUSTOMIZE_TEXTFIELD = 1;
+            var FancyboxI18nClose = 'Close';
+            var FancyboxI18nNext = 'Next';
+            var FancyboxI18nPrev = 'Previous';
+            var added_to_wishlist = 'Added to your wishlist.';
+            var ajaxsearch = true;
+            var baseDir = 'index.htm';
+            var baseUri = '';
+            var blocksearch_type = 'top';
+            var comparator_max_item = 2;
+            var comparedProductsIds = [];
+            var contentOnly = false;
+            var customizationIdMessage = 'Модификация №';
+            var delete_txt = 'Удалить';
+            var freeProductTranslation = 'Бесплатно!';
+            var freeShippingTranslation = 'Бесплатная доставка!';
+            var generated_date = 1407911867;
+            var homeslider_loop = true;
+            var homeslider_pause = '3000';
+            var homeslider_speed = '700';
+            var homeslider_width = '1170';
+            var id_lang = 3;
+            var img_dir = '';
+            var instantsearch = true;
+            var isGuest = 0;
+            var isLogged = 0;
+            var loggin_required = 'You must be logged in to manage your wishlist.';
+            var max_item = 'You cannot add more than 2 product(s) to the product comparison';
+            var min_item = 'Please select at least one product';
+            var mywishlist_url = '';
+            var nbItemsPerLine = 3;
+            var nbItemsPerLineMobile = 2;
+            var nbItemsPerLineTablet = 2;
+            var page_name = 'index';
+            var priceDisplayMethod = 1;
+            var priceDisplayPrecision = 2;
+            var quickView = true;
+            var removingLinkText = 'удалить товар из корзины';
+            var roundMode = 2;
+            var search_url = '';
+            var static_token = 'da54bada35f37b2cd72377705db97a29';
+            var token = '031d7dd0b5069a57a1b22a38a77067e0';
+            var usingSecureMode = false;
+            var wishlistProductsIds = false;
+            </script>*}
+            
+            
             <script type="text/javascript" src="{$wa_theme_url}treeManagement.js" ></script>
-
-            <script type="text/javascript" src="{$wa_theme_url}blocknewsletter.js" ></script>
+            {*<script type="text/javascript" src="{$wa_theme_url}blocknewsletter.js" ></script>*}
             {*<script type="text/javascript" src="{$wa_theme_url}blocksearch.js" ></script>*}
             <script type="text/javascript" src="{$wa_theme_url}homeslider.js" ></script>
             {*<script type="text/javascript" src="{$wa_theme_url}ajax-wishlist.js" ></script>*}
             <script type="text/javascript" src="{$wa_theme_url}hoverIntent.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}superfish-modified.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}blocktopmenu.js" ></script>
+
+
+
 
             <script type="text/javascript">
                 $(document).ready(function() {

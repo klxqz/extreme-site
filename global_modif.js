@@ -20,64 +20,10 @@ $(document).ready(function() {
         window.scrollTo(0, 1);
     }
     blockHover();
-    if (typeof quickView !== 'undefined' && quickView)
-        quick_view();
+    quick_view();
     dropDown();
+    bindGrid();
 
-    if (/*typeof page_name != 'undefined' && !in_array(page_name, ['index', 'product'])*/1)
-    {
-        bindGrid();
-
-        $(document).on('change', '.selectProductSort', function(e) {
-            if (typeof request != 'undefined' && request)
-                var requestSortProducts = request;
-            var splitData = $(this).val().split(':');
-            if (typeof requestSortProducts != 'undefined' && requestSortProducts)
-                document.location.href = requestSortProducts + ((requestSortProducts.indexOf('?') < 0) ? '?' : '&') + 'orderby=' + splitData[0] + '&orderway=' + splitData[1];
-        });
-
-        $(document).on('change', 'select[name="n"]', function() {
-            $(this.form).submit();
-        });
-
-        $(document).on('change', 'select[name="manufacturer_list"], select[name="supplier_list"]', function() {
-            if (this.value != '')
-                location.href = this.value;
-        });
-
-        $(document).on('change', 'select[name="currency_payement"]', function() {
-            setCurrency($(this).val());
-        });
-    }
-
-    $(document).on('click', '.back', function(e) {
-        e.preventDefault();
-        history.back();
-    });
-
-    jQuery.curCSS = jQuery.css;
-    if (!!$.prototype.cluetip)
-        $('a.cluetip').cluetip({
-            local: true,
-            cursor: 'pointer',
-            dropShadow: false,
-            dropShadowSteps: 0,
-            showTitle: false,
-            tracking: true,
-            sticky: false,
-            mouseOutClose: true,
-            fx: {
-                open: 'fadeIn',
-                openSpeed: 'fast'
-            }
-        }).css('opacity', 0.8);
-
-    if (!!$.prototype.fancybox)
-        $.extend($.fancybox.defaults.tpl, {
-            //closeBtn: '<a title="' + FancyboxI18nClose + '" class="fancybox-item fancybox-close" href="javascript:;"></a>',
-            //next: '<a title="' + FancyboxI18nNext + '" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
-            //prev: '<a title="' + FancyboxI18nPrev + '" class="fancybox-nav fancybox-prev" href="javascript:;"><span></span></a>'
-        });
 });
 
 function highdpiInit()
@@ -122,10 +68,7 @@ function blockHover(status)
             return;
         if ($('body').find('.container').width() == 1170)
         {
-            //var pcHeight = $(this).parent().outerHeight();
-            //var pcPHeight = $(this).parent().find('.button-container').outerHeight() + $(this).parent().find('.comments_note').outerHeight() + $(this).parent().find('.functional-buttons').outerHeight();
-            $(this).parent().addClass('hovered');
-            //$(this).parent().css('height', pcHeight + pcPHeight).css('margin-bottom', pcPHeight * (-1));
+           $(this).parent().addClass('hovered');
         }
     });
 
@@ -141,18 +84,13 @@ function quick_view()
     {
         e.preventDefault();
         var url = this.href;
-        if (url.indexOf('?') != -1)
-            url += '&';
-        else
-            url += '?';
 
-        if (!!$.prototype.fancybox)
             $.fancybox({
                 'padding': 0,
                 'width': 1087,
                 'height': 610,
                 'type': 'iframe',
-                'href': url + 'content_only=1'
+                'href': url + '?content_only=1'
             });
     });
 }
@@ -160,17 +98,15 @@ function quick_view()
 function bindGrid()
 {
     var view = $.totalStorage('display');
-
-    if (!view && (typeof displayList != 'undefined') && displayList)
+    if (!view) {
         view = 'list';
-
-    if (view && view != 'grid')
+    }
+    if (view && view != 'grid') {
         display(view);
-    else
+    } else {
         $('.display').find('li#grid').addClass('selected');
-
+    }
     $(document).on('click', '#grid', function(e) {
-
         e.preventDefault();
         display('grid');
     });
@@ -180,15 +116,11 @@ function bindGrid()
         display('list');
     });
 }
-if (nbItemsPerLine != 'undefined' && nbItemsPerLineTablet != 'undefined') {
-    var nbItemsPerLine = nbItemsPerLine;
-    var nbItemsPerLineTablet = nbItemsPerLineTablet
-} else {
-    var nbItemsPerLine = '';
-    var nbItemsPerLineTablet = '';
-}
+
 function display(view)
 {
+    var nbItemsPerLine = 3;
+    var nbItemsPerLineTablet = 2;
     if (view == 'list')
     {
         $('ul.product_list').removeClass('grid').addClass('list row');
@@ -353,75 +285,77 @@ function accordion(status) {
 }
 
 /* Stik Up menu script */
-(function($) {
-    $.fn.tmStickUp = function(options) {
-
-        var getOptions = {
-            correctionSelector: $('.correctionSelector')
-        }
-        $.extend(getOptions, options);
-
-        var
-                _this = $(this)
-                , _window = $(window)
-                , _document = $(document)
-                , thisOffsetTop = 0
-                , thisOuterHeight = 0
-                , thisMarginTop = 0
-                , thisPaddingTop = 0
-                , documentScroll = 0
-                , pseudoBlock
-                , lastScrollValue = 0
-                , scrollDir = ''
-                , tmpScrolled
-                ;
-
-        init();
-        function init() {
-            thisOffsetTop = parseInt(_this.offset().top);
-            thisMarginTop = parseInt(_this.css("margin-top"));
-            thisOuterHeight = parseInt(_this.outerHeight(true));
-
-            $('<div class="pseudoStickyBlock"></div>').insertAfter(_this);
-            pseudoBlock = $('.pseudoStickyBlock');
-            pseudoBlock.css({"position": "relative", "display": "block"});
-            addEventsFunction();
-        }//end init
-
-        function addEventsFunction() {
-            _document.on('scroll', function() {
-                tmpScrolled = $(this).scrollTop();
-                if (tmpScrolled > lastScrollValue) {
-                    scrollDir = 'down';
-                } else {
-                    scrollDir = 'up';
-                }
-                lastScrollValue = tmpScrolled;
-
-                correctionValue = getOptions.correctionSelector.outerHeight(true);
-                documentScroll = parseInt(_window.scrollTop());
-
-                if (thisOffsetTop - correctionValue < documentScroll) {
-                    _this.addClass('isStuck');
-                    _this.css({position: "fixed", top: correctionValue});
-                    pseudoBlock.css({"height": thisOuterHeight});
-                } else {
-                    _this.removeClass('isStuck');
-                    _this.css({position: "relative", top: 0});
-                    pseudoBlock.css({"height": 0});
-                }
-            }).trigger('scroll');
-        }
-    }//end tmStickUp function
-})(jQuery)
-
-
-
-$(document).ready(function() {
-    var stickMenu = true;
-    var docWidth = $('body').find('.container').width();
-    if (stickMenu && docWidth > 780) {
-        $('body').find('.row-top').addClass('stickUpTop');
-        $('.stickUpTop').tmStickUp();
-    }
-})
+/*
+ (function($) {
+ $.fn.tmStickUp = function(options) {
+ 
+ var getOptions = {
+ correctionSelector: $('.correctionSelector')
+ }
+ $.extend(getOptions, options);
+ 
+ var
+ _this = $(this)
+ , _window = $(window)
+ , _document = $(document)
+ , thisOffsetTop = 0
+ , thisOuterHeight = 0
+ , thisMarginTop = 0
+ , thisPaddingTop = 0
+ , documentScroll = 0
+ , pseudoBlock
+ , lastScrollValue = 0
+ , scrollDir = ''
+ , tmpScrolled
+ ;
+ 
+ init();
+ function init() {
+ thisOffsetTop = parseInt(_this.offset().top);
+ thisMarginTop = parseInt(_this.css("margin-top"));
+ thisOuterHeight = parseInt(_this.outerHeight(true));
+ 
+ $('<div class="pseudoStickyBlock"></div>').insertAfter(_this);
+ pseudoBlock = $('.pseudoStickyBlock');
+ pseudoBlock.css({"position": "relative", "display": "block"});
+ addEventsFunction();
+ }//end init
+ 
+ function addEventsFunction() {
+ _document.on('scroll', function() {
+ tmpScrolled = $(this).scrollTop();
+ if (tmpScrolled > lastScrollValue) {
+ scrollDir = 'down';
+ } else {
+ scrollDir = 'up';
+ }
+ lastScrollValue = tmpScrolled;
+ 
+ correctionValue = getOptions.correctionSelector.outerHeight(true);
+ documentScroll = parseInt(_window.scrollTop());
+ 
+ if (thisOffsetTop - correctionValue < documentScroll) {
+ _this.addClass('isStuck');
+ _this.css({position: "fixed", top: correctionValue});
+ pseudoBlock.css({"height": thisOuterHeight});
+ } else {
+ _this.removeClass('isStuck');
+ _this.css({position: "relative", top: 0});
+ pseudoBlock.css({"height": 0});
+ }
+ }).trigger('scroll');
+ }
+ }//end tmStickUp function
+ })(jQuery)
+ 
+ 
+ 
+ 
+ $(document).ready(function() {
+ var stickMenu = true;
+ var docWidth = $('body').find('.container').width();
+ if (stickMenu && docWidth > 780) {
+ $('body').find('.row-top').addClass('stickUpTop');
+ $('.stickUpTop').tmStickUp();
+ }
+ })*/
