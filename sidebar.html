@@ -1,0 +1,11 @@
+<section class="block informations_block_left" id="informations_block_left_1">
+    <h3 class="title_block">[`Information`]</h3>
+    <div class="block_content list-block">
+        {if isset($page)}
+            {$page_id = $page.id}
+        {else}
+            {$page_id = null}
+        {/if}
+        {wa_print_tree tree=$wa->site->pages() elem ='<a href=":url">:name</a>' selected=$page_id}
+    </div>
+</section>

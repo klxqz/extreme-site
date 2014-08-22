@@ -1,0 +1,473 @@
+{if $wa->get('content_only')}
+    {include file="`$wa_active_theme_path`/productpreview.html" inline}
+{else}
+    <!DOCTYPE HTML>
+    <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 " lang="ru"><![endif]-->
+    <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8 ie7" lang="ru"><![endif]-->
+    <!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="ru"><![endif]-->
+    <!--[if gt IE 8]> <html class="no-js ie9" lang="ru"><![endif]-->
+    <html lang="ru">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <title>{$wa->title()|escape}</title>
+            <meta name="Keywords" content="{$wa->meta('keywords')|escape}" />
+            <meta name="Description" content="{$wa->meta('description')|escape}" />
+
+            {if !empty($canonical)}<link rel="canonical" href="{$canonical}"/>{/if}
+            <link rel="shortcut icon" href="/favicon.ico"/>
+            {if $wa->blog}
+                <!-- rss -->
+                {$rss=$wa->blog->rssUrl()}
+                {if $rss}<link rel="alternate" type="application/rss+xml" title="[s`RSS`] &mdash; {$wa->accountName()}" href="{$rss}">{/if}
+            {/if}
+
+            <!-- fonts -->
+            <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,900' rel='stylesheet' type='text/css'>
+
+            <!-- css -->
+            <link href="{$wa_theme_url}custom.css?v{$wa_theme_version}" rel="stylesheet" type="text/css"/>
+            {if $wa->shop && $wa->shop->currency() == 'RUB'} <link href="{$wa_url}wa-content/font/ruble/arial/fontface.css" rel="stylesheet" type="text/css">{/if}
+            {$wa->css()} {* links active plugins CSS *}
+
+            <!-- js -->
+            <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>
+            <script type="text/javascript" src="{$wa_theme_url}custom.js?v{$wa_theme_version}"></script>    
+            {$wa->js()} {* links active plugins JS *}
+
+            {include file="`$wa_active_theme_path`/head.html" inline}
+
+            {$wa->headJs()} {* links Google Analytics tracking code and current site's custom JS (Site app) *}
+
+
+
+
+
+            <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+            <link rel="stylesheet" href="{$wa_theme_url}global.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}highdpi.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}responsive-tables.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}uniform.default.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}fancybox/jquery.fancybox.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}product_list.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockcart.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockcategories.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockcurrencies.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blocklanguages.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockcontact.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blocknewsletter.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}jquery.autocomplete.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blocksearch.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blocktags.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockuserinfo.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockviewed.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}homeslider.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}hooks.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockwishlist.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}productcomments.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blockpermanentlinks.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}themeconfiglink.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}blocktopmenu.css"  media="all"/>
+            <link rel="stylesheet" href="{$wa_theme_url}superfish-modified.css"  media="all"/>
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600"  media="all"/>
+            <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300"  rel='stylesheet' type='text/css'>
+            <!--[if IE 8]>
+                            <script src="{$wa_theme_url}html5shiv.js" ></script>
+                            <script src="{$wa_theme_url}respond.min.js" ></script>
+                            <![endif]-->
+
+            <style>
+                {if !empty($theme_settings.bg_image)}
+                    #page {
+                        background: url("{$wa_theme_url}{$theme_settings.bg_image}") no-repeat 50% 0; 
+                    }
+                {/if}
+            </style>
+        </head>
+        <body id="index" class="index hide-right-column lang_ru">
+            <div id="page">
+                <div class="header-container">
+                    <header id="header">
+                        <div class="banner">
+                            <div class="container">
+                                <div class="row">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                            <div class="container">
+                                <div class="row">
+                                    <nav>
+                                        <div id="header_logo">
+                                            <a href="{$wa_url}"  title="[`To home`]">
+                                                <img class="logo img-responsive" src="{$wa_theme_url}img/logo.png"  alt="{$wa->accountName()}"/>
+                                            </a>
+                                        </div>
+
+                                        {if isset($currencies)}
+                                            <div id="currencies-block-top">
+                                                {$currency = $wa->shop->currency()}
+                                                <div class="current">
+                                                    <span class="cur-label">[`Currency`]:</span>
+                                                    <strong>{$currency}</strong> 
+                                                </div>
+
+                                                {if count($currencies) > 1}
+                                                    <ul id="first-currencies" class="currencies_ul toogle_content">
+                                                        {foreach $currencies as $c_code => $c}
+                                                            <li {if $c_code == $currency} class="selected"{/if}>
+                                                                <a data-code="{$c_code}" href="#" title="{$c.title}">
+                                                                    {$c.title}
+                                                                </a>
+                                                            </li>
+                                                        {/foreach}
+                                                    </ul>
+
+                                                {/if}
+                                            </div>
+                                        {/if}
+
+
+                                        <ul id="header_links">
+                                            {foreach $wa->apps() as $a}
+                                                <li>
+                                                    <a {if $a.url==$wa_app_url}class="active"{/if} href="{$a.url}">{$a.name}</a>
+                                                </li>
+                                            {/foreach}
+                                        </ul>
+
+                                        {$cart = $wa->shop->cart()}
+                                        {$cart_total = $wa->shop->cart->total()}
+                                        {$cart_count = $wa->shop->cart->count()} 
+                                        {$cart_discount = $wa->shop->cart->total(false) - $wa->shop->cart->total(true)}
+
+                                        <div class="clearfix block-shopping_cart">
+                                            <div class="shopping_cart">
+                                                <a href="{$wa->getUrl('shop/frontend/cart')}"  title="Просмотреть мою корзину" rel="nofollow">
+                                                    <b>Корзина:</b>
+                                                    <span class="ajax_cart_product_txt_s{if !$cart_count} unvisible{/if}">Товаров: </span>
+                                                    <span class="ajax_cart_quantity{if !$cart_count} unvisible{/if}">{$cart_count}</span>
+                                                    <span class="ajax_cart_no_product{if $cart_count} unvisible{/if}">(пусто)</span>
+                                                </a>
+                                                <div class="cart_block block">
+                                                    <div class="block_content">
+
+                                                        <div class="cart_block_list">
+                                                            <dl class="products">
+                                                                {$cart_items = $cart->items()}
+                                                                {foreach $cart_items as $item}
+                                                                    <dt data-id="{$item.id}">
+                                                                    <a class="cart-images" href="{$wa->shop->productUrl($item.product)}"  title="{$item.name|escape}">
+                                                                        {$wa->shop->productImgHtml($item.product, '80x80', ['itemprop' => 'image', 'alt' => $item.name])}  
+                                                                    </a>
+                                                                    <div class="cart-info">
+                                                                        <div class="product-name">
+                                                                            <a class="cart_block_product_name" href="#"  title="{$item.name|escape}">{$item.name|escape}</a>
+                                                                        </div>
+                                                                        <span class="quantity-formated">
+                                                                            <span class="quantity">{$item.quantity}</span>&nbsp;x&nbsp;
+                                                                        </span>
+                                                                        <span class="price">{wa_currency_html($item.price,$wa->shop->currency())}</span>
+                                                                    </div>
+                                                                    <span class="remove_link">
+                                                                        <a class="ajax_cart_block_remove_link" href="#"  rel="nofollow" title="удалить товар из корзины">&nbsp;</a>
+                                                                    </span>
+                                                                    </dt>
+                                                                {/foreach}
+                                                            </dl>
+                                                            <p class="cart_block_no_products unvisible">
+                                                                Нет товаров
+                                                            </p>
+                                                            <div class="cart-prices">
+                                                                <div class="cart-prices-line first-line">
+                                                                    <span class="price cart_block_discount ajax_cart_discount">
+                                                                        {wa_currency_html($cart_discount, $wa->shop->currency())}
+                                                                    </span>
+                                                                    <span>
+                                                                        [`Discount`]
+                                                                    </span>
+                                                                </div>
+                                                                <div class="cart-prices-line last-line">
+                                                                    <span class="price cart_block_total ajax_block_cart_total">{wa_currency_html($cart_total, $wa->shop->currency())}</span>
+                                                                    <span>[`Total`]</span>
+                                                                </div>
+                                                            </div>
+                                                            <p class="cart-buttons">
+                                                                <a id="button_order_cart" class="btn btn-default button button-small" href="{$wa->getUrl('shop/frontend/checkout')}"  title="[`Checkout`]" rel="nofollow">
+                                                                    <span>[`Checkout`]<i class="icon-chevron-right right"></i></span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+
+
+                                        {if $wa->isAuthEnabled()}
+                                            <div class="block-user_info">
+
+
+                                                <!-- auth links -->
+                                                {if $wa->user()->isAuth()}
+                                                    <div class="header_user_info">
+                                                        {if $wa->shop}
+                                                            <a class="login" href="{$wa->getUrl('shop/frontend/my')}"  rel="nofollow" title="[s`Log in`]">{$wa->user('name')}</a>
+                                                        {else}
+                                                            <strong>{$wa->user('name')}</strong>
+                                                        {/if}
+
+                                                    </div>
+                                                    <div class="header_user_info">
+                                                        <a href="?logout"  title="[s`Log out`]" rel="nofollow">[s`Log out`]</a>
+                                                    </div>
+                                                {else}
+                                                    <div class="header_user_info">
+                                                        <a class="login" href="{$wa->loginUrl()}"  rel="nofollow" title="[s`Log in`]">[s`Log in`]</a>
+                                                    </div>
+                                                    <div class="header_user_info">
+                                                        <a href="{$wa->signupUrl()}"  title="[s`Sign up`]" rel="nofollow">[s`Sign up`]</a>
+                                                    </div>
+                                                {/if}
+                                            </div>
+                                        {/if}
+
+
+
+                                        <div id="search_block_top" class="clearfix">
+                                            <form id="searchbox" method="get" action="{$wa->getUrl('/frontend/search')}">
+                                                <input class="search_query form-control" type="search" id="search_query_top" name="query" placeholder="Поиск" {if !empty($query)}value="{$query}"{/if} />
+                                                <button type="submit" name="submit_search" class="btn btn-default button-search">
+                                                    <span>Поиск</span>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-top">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div id="block_top_menu" class="sf-contener clearfix">
+                                        <div class="cat-title">Categories</div>
+                                        {if isset($category)}
+                                            {$selected_category=$category.id}
+                                        {else}
+                                            {$selected_category=null}
+                                        {/if}
+                                        {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=true class="sf-menu clearfix menu-content" elem ='<a href=":url" title=":name">:name</a>'}
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <div class="container-out">
+                    <div class="columns-container">
+                        <div id="columns" class="container">
+                            {include file="`$wa_active_theme_path`/content.html" inline}
+                        </div> 
+                    </div> 
+
+                    <div class="footer-container">
+                        <footer id="footer" class="container">
+                            <div class="row"> 
+                                <section class="blockcategories_footer footer-block col-xs-12 col-sm-2">
+                                    <h4>Категории</h4>
+                                    <div class="category_footer toggle-footer">
+                                        <div class="list">
+                                            {if isset($category)}
+                                                {$selected_category=$category.id}
+                                            {else}
+                                                {$selected_category=null}
+                                            {/if}
+                                            {wa_print_tree tree=$wa->shop->categories(0, null, true) selected=$selected_category unfolded=false class="tree dhtml" elem ='<a href=":url" title=":name">:name</a>'}
+
+                                        </div>
+                                    </div>  
+                                </section>
+
+
+                                <section class="footer-block col-xs-12 col-sm-2" id="block_various_links_footer">
+                                    <h4>[`Information`]</h4>
+                                    {$shop_pages=$wa->shop->pages()}
+                                    {if $shop_pages}
+                                        {wa_print_tree  unfolded=false tree=$shop_pages class="toggle-footer" elem ='<a href=":url" title=":title">:name</a>' selected=$wa->param('page_id')}
+                                        <hr>
+                                    {/if}
+
+                                </section>
+                                <section class="bottom-footer col-xs-12">
+                                    <div>
+                                        &copy; Дизайн разработан <a href="http://wa-plugins.ru/" title="Создание и разработка сайтов">wa-plugins.ru</a>
+                                    </div>
+                                </section>
+
+                                {if $wa->isAuthEnabled()}
+                                    <section class="footer-block col-xs-12 col-sm-2">
+                                        <h4>[`My Account`]</h4>
+                                        <div class="block_content toggle-footer">
+                                            <ul class="bullet">
+                                                {if $wa->user()->isAuth()}
+                                                    {if $wa->shop}
+                                                        <li>
+                                                            <a href="{$wa->getUrl('shop/frontend/my')}">[s`My account`]</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{$wa->getUrl('shop/frontend/myOrders')}" >[`My orders`]</a>
+                                                        </li>
+                                                        {if shopAffiliate::isEnabled()}
+                                                            <li>
+                                                                <a href="{$wa->getUrl('/frontend/myAffiliate')}">[`Affiliate program`]</a>
+                                                            </li>
+                                                        {/if}
+                                                    {else}
+                                                        <li>{$wa->user('name')}</li>
+                                                        {/if}
+                                                    <li>
+                                                        <a href="?logout"  title="[s`Log out`]">[s`Log out`]</a>
+                                                    </li>
+                                                {else}
+                                                    <li>
+                                                        <a href="{$wa->loginUrl()}">[s`Log in`]</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{$wa->signupUrl()}">[s`Sign up`]</a>
+                                                    </li>
+                                                {/if}
+                                            </ul>
+                                        </div>
+                                    </section>
+                                {/if}
+
+                                <section id="social_block" class="footer-block col-xs-12 col-sm-2">
+                                    <h4>Подпишитесь</h4>
+                                    <ul class="toggle-footer">
+                                        <li class="twitter">
+                                            <a target="_blank" href="#"  title="Twitter">
+                                                <span>Twitter</span>
+                                            </a>
+                                        </li>
+                                        <li class="facebook">
+                                            <a target="_blank" href="#"  title="Facebook">
+                                                <span>Facebook</span>
+                                            </a>
+                                        </li>
+                                        <li class="rss">
+                                            <a target="_blank" href="#"  title="RSS">
+                                                <span>RSS</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </footer>
+                    </div> 
+                </div>
+            </div> 
+
+
+
+            <script type="text/javascript">
+                var CUSTOMIZE_TEXTFIELD = 1;
+                var FancyboxI18nClose = 'Close';
+                var FancyboxI18nNext = 'Next';
+                var FancyboxI18nPrev = 'Previous';
+                var added_to_wishlist = 'Added to your wishlist.';
+                var ajaxsearch = true;
+                var baseDir = 'index.htm';
+                var baseUri = '';
+                var blocksearch_type = 'top';
+                var comparator_max_item = 2;
+                var comparedProductsIds = [];
+                var contentOnly = false;
+                var customizationIdMessage = 'Модификация №';
+                var delete_txt = 'Удалить';
+                var freeProductTranslation = 'Бесплатно!';
+                var freeShippingTranslation = 'Бесплатная доставка!';
+                var generated_date = 1407911867;
+                var homeslider_loop = true;
+                var homeslider_pause = '3000';
+                var homeslider_speed = '700';
+                var homeslider_width = '1170';
+                var id_lang = 3;
+                var img_dir = '';
+                var instantsearch = true;
+                var isGuest = 0;
+                var isLogged = 0;
+                var loggin_required = 'You must be logged in to manage your wishlist.';
+                var max_item = 'You cannot add more than 2 product(s) to the product comparison';
+                var min_item = 'Please select at least one product';
+                var mywishlist_url = '';
+                var nbItemsPerLine = 3;
+                var nbItemsPerLineMobile = 2;
+                var nbItemsPerLineTablet = 2;
+                var page_name = 'index';
+                var priceDisplayMethod = 1;
+                var priceDisplayPrecision = 2;
+                var quickView = true;
+                var removingLinkText = 'удалить товар из корзины';
+                var roundMode = 2;
+                var search_url = '';
+                var static_token = 'da54bada35f37b2cd72377705db97a29';
+                var token = '031d7dd0b5069a57a1b22a38a77067e0';
+                var usingSecureMode = false;
+                var wishlistProductsIds = false;</script>
+
+            <script type="text/javascript" src="{$wa_theme_url}jquery.easing.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}tools.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}global.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}10-bootstrap.min.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}15-jquery.total-storage.min.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}15-jquery.uniform-modified.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}fancybox/jquery.fancybox.pack.js" ></script>
+            {*<script type="text/javascript" src="{$wa_theme_url}products-comparison.js" ></script>*}
+            {*<script type="text/javascript" src="{$wa_theme_url}ajax-cart.js" ></script>*}
+            <script type="text/javascript" src="{$wa_theme_url}jquery.scrollTo.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}jquery.serialScroll.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}bxslider/jquery.bxslider.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}treeManagement.js" ></script>
+
+            <script type="text/javascript" src="{$wa_theme_url}blocknewsletter.js" ></script>
+            {*<script type="text/javascript" src="{$wa_theme_url}blocksearch.js" ></script>*}
+            <script type="text/javascript" src="{$wa_theme_url}homeslider.js" ></script>
+            {*<script type="text/javascript" src="{$wa_theme_url}ajax-wishlist.js" ></script>*}
+            <script type="text/javascript" src="{$wa_theme_url}hoverIntent.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}superfish-modified.js" ></script>
+            <script type="text/javascript" src="{$wa_theme_url}blocktopmenu.js" ></script>
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('.menu-content li:has(ul)').addClass('hasSub');
+                });
+                $(document).ready(function() {
+                    var thisUrl = window.location.href;
+                    var thisPath = 'prices-drop';
+                    $('#block_top_menu ul li').each(function() {
+                        ourLink1 = $(this).children('a').attr('href');
+                        if (/prices-drop/i.test(ourLink1)) {
+                            $(this).addClass('sale-link');
+                        }
+                    })
+                    if (/prices-drop/i.test(thisUrl)) {
+                        $('#block_top_menu ul li').each(function() {
+                            ourLink = $(this).children('a').attr('href');
+                            if (/prices-drop/i.test(ourLink)) {
+                                $(this).addClass('sfHoverForce')
+                            }
+                        });
+                    }
+
+                });
+
+
+            </script>
+        </body>
+    </html>
+{/if}

@@ -1,0 +1,54 @@
+/* ------- FONTS ------- */
+/* ------- BORDERS ------- */
+/* ------- BACKGROUNDS ------- */
+/* ------- COLORS ------- */
+/* ------- Indents ------- */
+/* ------- Product Elements ------- */
+/* ------- Buttons ------- */
+/* ------- Buttons +/- ------ */
+/* ------- Button Small ------- */
+/* ------- Button exclusive-medium ------- */
+/* ------- My Account List bg ------- */
+/* ------- Product Listing ------- */
+/* ------- Grid/List vars ------- */
+/* ------- Pagination vars ------- */
+/* ------- Product Info ------- */
+/* ------- Cart Steps ------- */
+/* ------- sub heading (h2,h3) define ------- */
+/* ------- Image vars ------- */
+.block-user_info {
+  float: right;
+  padding: 17px 12px 0 0;
+  text-align: right; }
+
+.header_user_info a {
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+  display: block;
+  color: #333;
+  text-transform: uppercase;
+  padding: 0;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer; }
+  .header_user_info a:hover, .header_user_info a.active {
+    color: #fe2a2a; }
+.header_user_info + .header_user_info {
+  margin-top: 1px;
+  border-right: none; }
+
+.user_info {
+  text-align: right;
+  margin: 20px 0 0 0; }
+  .user_info li {
+    display: inline-block;
+    padding-right: 15px; }
+    .user_info li a {
+      text-decoration: none; }
+      .user_info li a:hover {
+        text-decoration: underline; }
