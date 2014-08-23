@@ -68,7 +68,7 @@ function blockHover(status)
             return;
         if ($('body').find('.container').width() == 1170)
         {
-           $(this).parent().addClass('hovered');
+            $(this).parent().addClass('hovered');
         }
     });
 
@@ -85,13 +85,13 @@ function quick_view()
         e.preventDefault();
         var url = this.href;
 
-            $.fancybox({
-                'padding': 0,
-                'width': 1087,
-                'height': 610,
-                'type': 'iframe',
-                'href': url + '?content_only=1'
-            });
+        $.fancybox({
+            'padding': 0,
+            'width': 1087,
+            'height': 610,
+            'type': 'iframe',
+            'href': url + '?content_only=1'
+        });
     });
 }
 
@@ -285,77 +285,77 @@ function accordion(status) {
 }
 
 /* Stik Up menu script */
-/*
- (function($) {
- $.fn.tmStickUp = function(options) {
- 
- var getOptions = {
- correctionSelector: $('.correctionSelector')
- }
- $.extend(getOptions, options);
- 
- var
- _this = $(this)
- , _window = $(window)
- , _document = $(document)
- , thisOffsetTop = 0
- , thisOuterHeight = 0
- , thisMarginTop = 0
- , thisPaddingTop = 0
- , documentScroll = 0
- , pseudoBlock
- , lastScrollValue = 0
- , scrollDir = ''
- , tmpScrolled
- ;
- 
- init();
- function init() {
- thisOffsetTop = parseInt(_this.offset().top);
- thisMarginTop = parseInt(_this.css("margin-top"));
- thisOuterHeight = parseInt(_this.outerHeight(true));
- 
- $('<div class="pseudoStickyBlock"></div>').insertAfter(_this);
- pseudoBlock = $('.pseudoStickyBlock');
- pseudoBlock.css({"position": "relative", "display": "block"});
- addEventsFunction();
- }//end init
- 
- function addEventsFunction() {
- _document.on('scroll', function() {
- tmpScrolled = $(this).scrollTop();
- if (tmpScrolled > lastScrollValue) {
- scrollDir = 'down';
- } else {
- scrollDir = 'up';
- }
- lastScrollValue = tmpScrolled;
- 
- correctionValue = getOptions.correctionSelector.outerHeight(true);
- documentScroll = parseInt(_window.scrollTop());
- 
- if (thisOffsetTop - correctionValue < documentScroll) {
- _this.addClass('isStuck');
- _this.css({position: "fixed", top: correctionValue});
- pseudoBlock.css({"height": thisOuterHeight});
- } else {
- _this.removeClass('isStuck');
- _this.css({position: "relative", top: 0});
- pseudoBlock.css({"height": 0});
- }
- }).trigger('scroll');
- }
- }//end tmStickUp function
- })(jQuery)
- 
- 
- 
- 
- $(document).ready(function() {
- var stickMenu = true;
- var docWidth = $('body').find('.container').width();
- if (stickMenu && docWidth > 780) {
- $('body').find('.row-top').addClass('stickUpTop');
- $('.stickUpTop').tmStickUp();
- }
- })*/
+
+(function($) {
+    $.fn.tmStickUp = function(options) {
+
+        var getOptions = {
+            correctionSelector: $('.correctionSelector')
+        }
+        $.extend(getOptions, options);
+
+        var
+                _this = $(this)
+                , _window = $(window)
+                , _document = $(document)
+                , thisOffsetTop = 0
+                , thisOuterHeight = 0
+                , thisMarginTop = 0
+                , thisPaddingTop = 0
+                , documentScroll = 0
+                , pseudoBlock
+                , lastScrollValue = 0
+                , scrollDir = ''
+                , tmpScrolled
+                ;
+
+        init();
+        function init() {
+            thisOffsetTop = parseInt(_this.offset().top);
+            thisMarginTop = parseInt(_this.css("margin-top"));
+            thisOuterHeight = parseInt(_this.outerHeight(true));
+
+            $('<div class="pseudoStickyBlock"></div>').insertAfter(_this);
+            pseudoBlock = $('.pseudoStickyBlock');
+            pseudoBlock.css({"position": "relative", "display": "block"});
+            addEventsFunction();
+        }//end init
+
+        function addEventsFunction() {
+            _document.on('scroll', function() {
+                tmpScrolled = $(this).scrollTop();
+                if (tmpScrolled > lastScrollValue) {
+                    scrollDir = 'down';
+                } else {
+                    scrollDir = 'up';
+                }
+                lastScrollValue = tmpScrolled;
+
+                correctionValue = getOptions.correctionSelector.outerHeight(true);
+                documentScroll = parseInt(_window.scrollTop());
+
+                if (thisOffsetTop - correctionValue < documentScroll) {
+                    _this.addClass('isStuck');
+                    _this.css({position: "fixed", top: correctionValue});
+                    pseudoBlock.css({"height": thisOuterHeight});
+                } else {
+                    _this.removeClass('isStuck');
+                    _this.css({position: "relative", top: 0});
+                    pseudoBlock.css({"height": 0});
+                }
+            }).trigger('scroll');
+        }
+    }//end tmStickUp function
+})(jQuery)
+
+
+
+
+$(document).ready(function() {
+    var stickMenu = true;
+    var docWidth = $('body').find('.container').width();
+    if (stickMenu && docWidth > 780) {
+        $('body').find('.row-top').addClass('stickUpTop');
+        $('.stickUpTop').tmStickUp();
+    }
+})

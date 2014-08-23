@@ -123,7 +123,7 @@
       transition: all 0.3s ease; }
     #search_block_top .btn.button-search:hover:before {
       left: 50%;
-      margin-left: -41px; }
+      margin-left: -13px; }
     #search_block_top .btn.button-search:hover span {
       -moz-transform: translateX(300%);
       -ms-transform: translateX(300%);

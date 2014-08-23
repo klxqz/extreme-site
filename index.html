@@ -31,39 +31,33 @@
 
             <!-- js -->
             <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>
+            <script type="text/javascript">
+                var cart_url = '{$wa->getUrl('shop/frontend/cart')}';
+            </script>
             <script type="text/javascript" src="{$wa_theme_url}custom.js?v{$wa_theme_version}"></script>    
-
-
-
-
 
 
             <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0"/>
             <meta name="apple-mobile-web-app-capable" content="yes"/>
 
             <link rel="stylesheet" href="{$wa_theme_url}global.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}highdpi.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}responsive-tables.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}uniform.default.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}fancybox/jquery.fancybox.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}product_list.css"  media="all"/>
+
             <link rel="stylesheet" href="{$wa_theme_url}blockcart.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockcategories.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockcurrencies.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blocklanguages.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockcontact.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blocknewsletter.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}jquery.autocomplete.css"  media="all"/>
+
+            {*<link rel="stylesheet" href="{$wa_theme_url}blockcontact.css"  media="all"/>*}
+            {*<link rel="stylesheet" href="{$wa_theme_url}blocknewsletter.css"  media="all"/>*}
             <link rel="stylesheet" href="{$wa_theme_url}blocksearch.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blocktags.css"  media="all"/>
+            {*<link rel="stylesheet" href="{$wa_theme_url}blocktags.css"  media="all"/>*}
             <link rel="stylesheet" href="{$wa_theme_url}blockuserinfo.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockviewed.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}homeslider.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}hooks.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}blockwishlist.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}productcomments.css"  media="all"/>
+            {*<link rel="stylesheet" href="{$wa_theme_url}blockviewed.css"  media="all"/>*}
+
+
+            {*<link rel="stylesheet" href="{$wa_theme_url}blockwishlist.css"  media="all"/>*}
+
             <link rel="stylesheet" href="{$wa_theme_url}blockpermanentlinks.css"  media="all"/>
-            <link rel="stylesheet" href="{$wa_theme_url}themeconfiglink.css"  media="all"/>
+            {*<link rel="stylesheet" href="{$wa_theme_url}themeconfiglink.css"  media="all"/>*}
             <link rel="stylesheet" href="{$wa_theme_url}blocktopmenu.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}superfish-modified.css"  media="all"/>
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600"  media="all"/>
@@ -75,22 +69,19 @@
 
 
 
-            <script type="text/javascript" src="{$wa_theme_url}jquery.easing.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}tools.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}global_modif.js" ></script>
+            {**}
+            {*<script type="text/javascript" src="{$wa_theme_url}tools.js" ></script>*}
+            {*<script type="text/javascript" src="{$wa_theme_url}global_modif.js" ></script>*}
             {*<script type="text/javascript" src="{$wa_theme_url}global.js" ></script>*}
-            <script type="text/javascript" src="{$wa_theme_url}10-bootstrap.min.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}15-jquery.total-storage.min.js" ></script>
+            
+            {*<script type="text/javascript" src="{$wa_theme_url}15-jquery.total-storage.min.js" ></script>*}
             <script type="text/javascript" src="{$wa_theme_url}15-jquery.uniform-modified.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}fancybox/jquery.fancybox.pack.js" ></script>
-            {*<script type="text/javascript" src="{$wa_theme_url}products-comparison.js" ></script>*}
-            {*<script type="text/javascript" src="{$wa_theme_url}ajax-cart.js" ></script>*}
-            <script type="text/javascript" src="{$wa_theme_url}jquery.scrollTo.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}jquery.serialScroll.js" ></script>
-            <script type="text/javascript" src="{$wa_theme_url}bxslider/jquery.bxslider.js" ></script>
+            {**}
+            {**}
             
 
-            
+
+
 
 
 
@@ -397,93 +388,17 @@
             </div> 
 
 
-            {*
-            <script type="text/javascript">
-            var CUSTOMIZE_TEXTFIELD = 1;
-            var FancyboxI18nClose = 'Close';
-            var FancyboxI18nNext = 'Next';
-            var FancyboxI18nPrev = 'Previous';
-            var added_to_wishlist = 'Added to your wishlist.';
-            var ajaxsearch = true;
-            var baseDir = 'index.htm';
-            var baseUri = '';
-            var blocksearch_type = 'top';
-            var comparator_max_item = 2;
-            var comparedProductsIds = [];
-            var contentOnly = false;
-            var customizationIdMessage = 'Модификация №';
-            var delete_txt = 'Удалить';
-            var freeProductTranslation = 'Бесплатно!';
-            var freeShippingTranslation = 'Бесплатная доставка!';
-            var generated_date = 1407911867;
-            var homeslider_loop = true;
-            var homeslider_pause = '3000';
-            var homeslider_speed = '700';
-            var homeslider_width = '1170';
-            var id_lang = 3;
-            var img_dir = '';
-            var instantsearch = true;
-            var isGuest = 0;
-            var isLogged = 0;
-            var loggin_required = 'You must be logged in to manage your wishlist.';
-            var max_item = 'You cannot add more than 2 product(s) to the product comparison';
-            var min_item = 'Please select at least one product';
-            var mywishlist_url = '';
-            var nbItemsPerLine = 3;
-            var nbItemsPerLineMobile = 2;
-            var nbItemsPerLineTablet = 2;
-            var page_name = 'index';
-            var priceDisplayMethod = 1;
-            var priceDisplayPrecision = 2;
-            var quickView = true;
-            var removingLinkText = 'удалить товар из корзины';
-            var roundMode = 2;
-            var search_url = '';
-            var static_token = 'da54bada35f37b2cd72377705db97a29';
-            var token = '031d7dd0b5069a57a1b22a38a77067e0';
-            var usingSecureMode = false;
-            var wishlistProductsIds = false;
-            </script>*}
-            
-            
+
             <script type="text/javascript" src="{$wa_theme_url}treeManagement.js" ></script>
             {*<script type="text/javascript" src="{$wa_theme_url}blocknewsletter.js" ></script>*}
             {*<script type="text/javascript" src="{$wa_theme_url}blocksearch.js" ></script>*}
-            <script type="text/javascript" src="{$wa_theme_url}homeslider.js" ></script>
+
             {*<script type="text/javascript" src="{$wa_theme_url}ajax-wishlist.js" ></script>*}
             <script type="text/javascript" src="{$wa_theme_url}hoverIntent.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}superfish-modified.js" ></script>
             <script type="text/javascript" src="{$wa_theme_url}blocktopmenu.js" ></script>
 
 
-
-
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('.menu-content li:has(ul)').addClass('hasSub');
-                });
-                $(document).ready(function() {
-                    var thisUrl = window.location.href;
-                    var thisPath = 'prices-drop';
-                    $('#block_top_menu ul li').each(function() {
-                        ourLink1 = $(this).children('a').attr('href');
-                        if (/prices-drop/i.test(ourLink1)) {
-                            $(this).addClass('sale-link');
-                        }
-                    })
-                    if (/prices-drop/i.test(thisUrl)) {
-                        $('#block_top_menu ul li').each(function() {
-                            ourLink = $(this).children('a').attr('href');
-                            if (/prices-drop/i.test(ourLink)) {
-                                $(this).addClass('sfHoverForce')
-                            }
-                        });
-                    }
-
-                });
-
-
-            </script>
         </body>
     </html>
 {/if}
