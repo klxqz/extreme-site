@@ -198,7 +198,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    $("input[type='text'], textarea, select").addClass('form-control');
+    $("input[type='text'], input[type='password'], textarea, select").addClass('form-control');
     $("input[type='submit'], button").addClass('bt button');
 
     function HoverWatcher(selector)

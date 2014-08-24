@@ -8,25 +8,7 @@ For use with the Uniform plugin:
 http://uniformjs.com/
 
 */
-/* ------- FONTS ------- */
-/* ------- BORDERS ------- */
-/* ------- BACKGROUNDS ------- */
-/* ------- COLORS ------- */
-/* ------- Indents ------- */
-/* ------- Product Elements ------- */
-/* ------- Buttons ------- */
-/* ------- Buttons +/- ------ */
-/* ------- Button Small ------- */
-/* ------- Button exclusive-medium ------- */
-/* ------- My Account List bg ------- */
-/* ------- Product Listing ------- */
-/* ------- Grid/List vars ------- */
-/* ------- Pagination vars ------- */
-/* ------- Product Info ------- */
-/* ------- Cart Steps ------- */
-/* ------- sub heading (h2,h3) define ------- */
-/* ------- Image vars ------- */
-/* General settings */
+
 div.selector, div.selector span, div.uploader, div.uploader span.action, div.button, div.button span {
   background-image: url("./img/sprite.png");
   background-repeat: no-repeat;

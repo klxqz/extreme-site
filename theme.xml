@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="extreme" system="0" vendor="webasyst" author="Webasyst" app="site" version="1.1.1">
+<theme id="extreme" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.0">
     <name locale="en_US">Extreme</name>
     <name locale="ru_RU">Extreme</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
@@ -45,6 +45,79 @@
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
         </file>
+        
+        
+        <file path="blockcart.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="blockpermanentlinks.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="blocksearch.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="blocktags.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="blocktopmenu.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="blockuserinfo.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="responsive-tables.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="superfish-modified.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="theme2.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="theme3.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="theme4.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="theme5.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        <file path="uniform.default.css" custom="0">
+            <description locale="en_US">CSS</description>
+            <description locale="ru_RU">CSS</description>
+        </file>
+        
+        
+        <file path="blocktopmenu.js" custom="0">
+            <description locale="en_US">JS</description>
+            <description locale="ru_RU">JS</description>
+        </file>
+        <file path="hoverIntent.js" custom="0">
+            <description locale="en_US">JS</description>
+            <description locale="ru_RU">JS</description>
+        </file>
+        <file path="superfish-modified.js" custom="0">
+            <description locale="en_US">JS</description>
+            <description locale="ru_RU">JS</description>
+        </file>
+        <file path="treeManagement.js" custom="0">
+            <description locale="en_US">JS</description>
+            <description locale="ru_RU">JS</description>
+        </file>
+        
     </files>
     
     <settings>
@@ -54,11 +127,85 @@
             <name locale="en_US">Company Logo</name>
             <name locale="ru_RU">Логотип компании</name>
         </setting>
+        <setting var="footer_img" control_type="image">
+            <value>img/drop-1.png</value>
+            <filename>img/drop-1.png</filename>
+            <name locale="en_US">Company Logo</name>
+            <name locale="ru_RU">Логотип компании</name>
+        </setting>
         <setting var="bg_image" control_type="image">
-            <value>img/bg-main.jpg</value>
-            <filename>img/bg-main.*</filename>
-            <name locale="en_US">background</name>
+            <value>img/bg/bg-main.jpg</value>
+            <filename>img/bg/bg-main.*</filename>
+            <name locale="en_US">Additional background</name>
+            <name locale="ru_RU">Дополнительный фон</name>
+        </setting>
+        <setting var="bg" control_type="image_select">
+            <value></value>
+            <name locale="en_US">Background</name>
             <name locale="ru_RU">Фон</name>
+            <options>
+                <option value=""></option>
+                <option value="img/bg/bg-style2.gif"></option>
+                <option value="img/bg/bg-style3.jpg"></option>
+                <option value="img/bg/bg-style4.jpg"></option>
+                <option value="img/bg/bg-style5.jpg"></option>
+                <option value="img/bg/cloth.jpg"></option>
+                <option value="img/bg/grey.jpg"></option>
+                <option value="img/bg/red.jpg"></option>
+                <option value="img/bg/blue.jpg"></option>
+                <option value="img/bg/green.jpg"></option>
+                <option value="img/bg/purple.jpg"></option>
+                <option value="img/bg/yellow.jpg"></option>
+            </options>
+        </setting>
+        <setting var="bg_custom" control_type="image">
+            <value></value>
+            <filename>img/bg/*</filename>
+            <name locale="en_US">custom background</name>
+            <name locale="ru_RU">Пользовательский фон</name>
+        </setting>
+        <setting var="color_scheme" control_type="select">
+            <value></value>
+            <name locale="en_US">Color scheme</name>
+            <name locale="ru_RU">Цветовая схема</name>
+            <options>
+                <option value="">
+                    <name locale="en_US">theme1</name>
+                    <name locale="ru_RU">theme1</name>
+                </option>
+                <option value="theme2">
+                    <name locale="en_US">theme2</name>
+                    <name locale="ru_RU">theme2</name>
+                </option>
+                <option value="theme3">
+                    <name locale="en_US">theme3</name>
+                    <name locale="ru_RU">theme3</name>
+                </option>
+                <option value="theme4">
+                    <name locale="en_US">theme4</name>
+                    <name locale="ru_RU">theme4</name>
+                </option>
+                <option value="theme5">
+                    <name locale="en_US">theme5</name>
+                    <name locale="ru_RU">theme5</name>
+                </option>
+            </options>
+        </setting>
+        
+        <setting var="footer_facebook" control_type="text">
+            <value>https://www.facebook.com/</value>
+            <name locale="en_US">Link to facebook</name>
+            <name locale="ru_RU">Ссылка на facebook</name>
+        </setting>
+        <setting var="footer_twitter" control_type="text">
+            <value>http://twiter.ru/</value>
+            <name locale="en_US">Link to twitter</name>
+            <name locale="ru_RU">Ссылка на twitter</name>
+        </setting>
+        <setting var="footer_vk" control_type="text">
+            <value>http://vk.com/</value>
+            <name locale="en_US">Link to vk</name>
+            <name locale="ru_RU">Ссылка на ВКонтакте</name>
         </setting>
         
         <setting var="source_main_menu" control_type="select">
@@ -80,11 +227,103 @@
                 </option>
             </options>
         </setting>
+        <setting var="source_footer_info" control_type="select">
+            <value>shop_pages</value>
+            <name locale="en_US">Source for block «Information» at the bottom of the page</name>
+            <name locale="ru_RU">Источник для блока «Информация» в нижней части страницы</name>
+            <options>
+                <option value="site_pages">
+                    <name locale="en_US">Application «Site» - pages</name>
+                    <name locale="ru_RU">Приложение «Сайт» - страницы</name>
+                </option>
+                <option value="shop_pages">
+                    <name locale="en_US">Application «Shop» - pages</name>
+                    <name locale="ru_RU">Приложение «Магазин» - страницы</name>
+                </option>
+            </options>
+        </setting>
     </settings>
-     <locales>
+    <locales>
         <locale>
             <msgid>To home</msgid>
             <msgstr locale="ru_RU">На главную</msgstr>
         </locale>
+        <locale>
+            <msgid>To home</msgid>
+            <msgstr locale="ru_RU">На главную</msgstr>
+        </locale>
+        <locale>
+            <msgid>Information</msgid>
+            <msgstr locale="ru_RU">Информация</msgstr>
+        </locale>
+        <locale>
+            <msgid>My Account</msgid>
+            <msgstr locale="ru_RU">Учетная запись</msgstr>
+        </locale>
+        <locale>
+            <msgid>My orders</msgid>
+            <msgstr locale="ru_RU">Мои заказы</msgstr>
+        </locale> 
+        <locale>
+            <msgid>No products</msgid>
+            <msgstr locale="ru_RU">Нет товаров</msgstr>
+        </locale>
+        <locale>
+            <msgid>Search</msgid>
+            <msgstr locale="ru_RU">Поиск</msgstr>
+        </locale>
+        <locale>
+            <msgid>Vkontakte</msgid>
+            <msgstr locale="ru_RU">Вконтакте</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Facebook</msgid>
+            <msgstr locale="ru_RU">Facebook</msgstr>
+        </locale>
+        <locale>
+            <msgid>Twitter</msgid>
+            <msgstr locale="ru_RU">Twitter</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Follow us</msgid>
+            <msgstr locale="ru_RU">Подпишитесь</msgstr>
+        </locale>
+        <locale>
+            <msgid>Site design</msgid>
+            <msgstr locale="ru_RU">Дизайн сайта</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Designing and developing websites</msgid>
+            <msgstr locale="ru_RU">Создание и разработка сайтов</msgstr>
+        </locale> 
+        <locale>
+            <msgid>Categories</msgid>
+            <msgstr locale="ru_RU">Категории</msgstr>
+        </locale>
+        <locale>
+            <msgid>Checkout</msgid>
+            <msgstr locale="ru_RU">Оформление заказа</msgstr>
+        </locale>
+        <locale>
+            <msgid>Total</msgid>
+            <msgstr locale="ru_RU">Итого</msgstr>
+        </locale>
+        <locale>
+            <msgid>Discount</msgid>
+            <msgstr locale="ru_RU">Скидка</msgstr>
+        </locale>
+        <locale>
+            <msgid>(empty)</msgid>
+            <msgstr locale="ru_RU">(пусто)</msgstr>
+        </locale>
+        <locale>
+            <msgid>Goods</msgid>
+            <msgstr locale="ru_RU">Товаров</msgstr>
+        </locale>
+        <locale>
+            <msgid>Cart</msgid>
+            <msgstr locale="ru_RU">Корзина</msgstr>
+        </locale>
+        
     </locales>
 </theme>

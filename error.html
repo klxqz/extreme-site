@@ -4,7 +4,7 @@
 
         <div class="pagenotfound">
             <div class="img-404">
-                <img alt="{if $error_message}{$error_message}{else}[`Error`]{/if}" src="{$wa_theme_url}img/img-404.jpg">
+                <img alt="{if $error_message}{$error_message}{else}[`Error`]{/if}" src="{$wa_theme_url}img/img-404.png">
             </div>
             <h1>
                 {if $error_code}{$error_code}. {/if}
@@ -13,14 +13,12 @@
         <p>
             [`The requested resource is not available.`]
         </p>
-        <h3>To find a product, please type its name in the field below.</h3>
-
 
         <div class="buttons">
-            <a title="Home" href="{$wa_app_url}" class="btn btn-default button button-medium">
+            <a title="[`To home`]" href="{$wa_app_url}" class="btn btn-default button button-medium">
                 <span>
                     <i class="icon-chevron-left left"></i>
-                    Home page
+                    [`To home`]
                 </span>
             </a>
         </div>
