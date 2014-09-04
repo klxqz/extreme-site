@@ -192,6 +192,17 @@
             </options>
         </setting>
         
+        <setting var="floating_top_menu" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Floating top menu</name>
+            <name locale="ru_RU">Плавающее верхнее меню</name>
+        </setting>
+        <setting var="use_uniform" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Use styling form elements «uniform»</name>
+            <name locale="ru_RU">Использовать стилизацию элементов форм «uniform»</name>
+        </setting>
+        
         <setting var="footer_facebook" control_type="text">
             <value>https://www.facebook.com/</value>
             <name locale="en_US">Link to facebook</name>

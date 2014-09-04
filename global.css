@@ -6017,9 +6017,12 @@ table.table_block td {
       box-shadow: none;
       border-color: #333; }
     .product-box .product-image img {
-      max-width: 100%;
-      width: 100%;
-      height: auto; }
+        margin: 0 auto;
+      width: auto;
+      height: auto; 
+      max-width: 190px;
+      max-height: 190px;
+    }
 
 /* ----------------------------------------------------------------------------- 
 								Homepage Tabs 
@@ -6167,6 +6170,8 @@ table.table_block td {
 .block .products-block li {
   margin-bottom: 30px; }
   .block .products-block li .products-block-image {
+      min-width: 110px;
+      min-height: 110px;
     border: 1px solid lightgray;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -6183,6 +6188,10 @@ table.table_block td {
         display: inline-block;
         margin: 0 auto 10px;
         text-align: center; } }
+    .block .products-block li .products-block-image img{
+        margin: 0 auto;
+    }
+    
   .block .products-block li .product-content {
     overflow: hidden; }
     .block .products-block li .product-content h5 {
@@ -6343,13 +6352,9 @@ ul.footer_links {
   .top-pagination-content div.pagination,
   .bottom-pagination-content div.pagination {
     margin: 0;
-    float: right;
-    width: 530px;
+    float: left;
     text-align: center; }
-    @media (min-width: 992px) and (max-width: 1199px) {
-      .top-pagination-content div.pagination,
-      .bottom-pagination-content div.pagination {
-        width: 380px; } }
+
     @media (max-width: 991px) {
       .top-pagination-content div.pagination,
       .bottom-pagination-content div.pagination {
@@ -6393,15 +6398,15 @@ ul.footer_links {
         border: 1px solid;
         border-color: lightgray;
         display: block; }
-        .top-pagination-content ul.pagination li > a span,
-        .top-pagination-content ul.pagination li > span span,
-        .bottom-pagination-content ul.pagination li > a span,
-        .bottom-pagination-content ul.pagination li > span span {
+        .top-pagination-content ul.pagination li > a,
+        .top-pagination-content ul.pagination li > span,
+        .bottom-pagination-content ul.pagination li > a,
+        .bottom-pagination-content ul.pagination li > span {
           padding: 3px 9px;
           display: block;
           background: #ebebeb; }
-      .top-pagination-content ul.pagination li > a:hover span,
-      .bottom-pagination-content ul.pagination li > a:hover span {
+      .top-pagination-content ul.pagination li > a:hover,
+      .bottom-pagination-content ul.pagination li > a:hover {
         background: #c5c5c5; }
       .top-pagination-content ul.pagination li.pagination_previous, .top-pagination-content ul.pagination li.pagination_next,
       .bottom-pagination-content ul.pagination li.pagination_previous,
@@ -6452,12 +6457,12 @@ ul.footer_links {
       .top-pagination-content ul.pagination li.pagination_next,
       .bottom-pagination-content ul.pagination li.pagination_next {
         margin-left: 10px; }
-      .top-pagination-content ul.pagination li.active > span,
-      .bottom-pagination-content ul.pagination li.active > span {
+      .top-pagination-content ul.pagination li.selected > a,
+      .bottom-pagination-content ul.pagination li.selected > a {
         color: #333333;
         border-color: lightgray; }
-        .top-pagination-content ul.pagination li.active > span span,
-        .bottom-pagination-content ul.pagination li.active > span span {
+        .top-pagination-content ul.pagination li.selected > a,
+        .bottom-pagination-content ul.pagination li.selected > a {
           background: #c5c5c5; }
   .top-pagination-content .compare-form,
   .bottom-pagination-content .compare-form {
