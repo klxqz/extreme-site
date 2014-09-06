@@ -2,7 +2,7 @@
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
 <theme id="extreme" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.0">
     <name locale="en_US">Extreme</name>
-    <name locale="ru_RU">Extreme</name>
+    <name locale="ru_RU">Экстрим</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
     <files>
         <file path="index.html">
@@ -59,18 +59,6 @@
             <description locale="en_US">CSS</description>
             <description locale="ru_RU">CSS</description>
         </file>
-        <file path="blocktags.css" custom="0">
-            <description locale="en_US">CSS</description>
-            <description locale="ru_RU">CSS</description>
-        </file>
-        <file path="blocktopmenu.css" custom="0">
-            <description locale="en_US">CSS</description>
-            <description locale="ru_RU">CSS</description>
-        </file>
-        <file path="blockuserinfo.css" custom="0">
-            <description locale="en_US">CSS</description>
-            <description locale="ru_RU">CSS</description>
-        </file>
         <file path="responsive-tables.css" custom="0">
             <description locale="en_US">CSS</description>
             <description locale="ru_RU">CSS</description>
@@ -99,8 +87,6 @@
             <description locale="en_US">CSS</description>
             <description locale="ru_RU">CSS</description>
         </file>
-        
-        
         <file path="blocktopmenu.js" custom="0">
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
@@ -442,6 +428,14 @@
         <locale>
             <msgid>Cart</msgid>
             <msgstr locale="ru_RU">Корзина</msgstr>
+        </locale>
+        <locale>
+            <msgid>Catalog</msgid>
+            <msgstr locale="ru_RU">Каталог</msgstr>
+        </locale>
+        <locale>
+            <msgid>Favorites</msgid>
+            <msgstr locale="ru_RU">Избранное</msgstr>
         </locale>
         
     </locales>

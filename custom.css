@@ -100,13 +100,6 @@ input.error, textarea.error { border: 2px solid red; }
 
 i.icon16 { background-repeat:no-repeat; height:16px; width:16px; display:inline-block; text-indent:-9999px; text-decoration:none!important; }
 * i.icon16 { text-decoration:none!important; vertical-align:top; margin: 0.2em 0.25em 0 0; }
-.icon16.loading { background-image: url('/wa-content/img/loading16.gif'); }
-.icon16.rss { background-image: url("img/icons/rss.png"); }
-.icon16.facebook { background-image: url("img/icons/facebook.png"); }
-.icon16.twitter { background-image: url("img/icons/twitter.png"); }
-.icon16.cart { background-image: url('img/icons/cart-full.png'); }
-.icon16.cart.empty { background-image: url('img/icons/cart-empty.png'); }
-
 .icon16.color { border-radius: 50%; border: 1px solid rgba(0,0,0,0.2); width: 14px; height: 14px; }
 
 /* 10x10 Icons

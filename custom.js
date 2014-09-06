@@ -37,15 +37,12 @@ function desktopInit() {
     var width_menu = $('#block_top_menu ul.sf-menu').width();
     var ul_width = 0;
     var index = 0;
-    var list = $("#block_top_menu ul.sf-menu > li");
-    for (var key in list) {
-        var item = list[key];
-        if (ul_width + $(item).width() + 50 > width_menu) {
-            index = $("#block_top_menu ul.sf-menu > li").index($(item));
-            break;
+    $("#block_top_menu ul.sf-menu > li").each(function(){
+        if (!index && ul_width + $(this).width() + 50 > width_menu) {
+            index = $("#block_top_menu ul.sf-menu > li").index($(this));
         }
-        ul_width += $(item).width();
-    }
+        ul_width += $(this).width();
+    });
     if (index) {
         reconstruct(index);
     }
@@ -296,6 +293,6 @@ $(document).ready(function() {
 
 $(window).load(function() {
     if (use_uniform) {
-        $("select.form-control,input[type='checkbox']:not(.comparator), input[type='radio'],input#id_carrier2, input[type='file']").uniform();
+        $("select.form-control,input:not([type=submit],[type=button],.comparator)").uniform();
     }
 });
