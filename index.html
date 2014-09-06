@@ -50,8 +50,9 @@
 
             <link rel="stylesheet" href="{$wa_theme_url}global.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}responsive-tables.css"  media="all"/>
-            {if $theme_settings.use_uniform}<link rel="stylesheet" href="{$wa_theme_url}uniform.default.css"  media="all"/>{/if}
-            
+           
+            {if $theme_settings.use_uniform}<link rel="stylesheet" href="{$wa_theme_url}css/uniform/{$theme_settings.uniform_theme}/css/uniform.{$theme_settings.uniform_theme}.min.css"  media="all"/>{/if}
+
             <link rel="stylesheet" href="{$wa_theme_url}blockcart.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}blocksearch.css"  media="all"/>
             <link rel="stylesheet" href="{$wa_theme_url}blocktags.css"  media="all"/>

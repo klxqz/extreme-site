@@ -121,6 +121,69 @@
     </files>
     
     <settings>
+        <setting var="main_come" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <script>
+                    $(function(){
+                        $('.p-title').closest('.field').addClass('custom-field');
+                    });
+                </script>
+                <style>
+                .field.custom-field .name{
+                    float:none;width: auto;
+                }
+                .field.custom-field .value{
+                    display:none;
+                }
+                .p-title{
+                    font-weight: bold;color: #000;
+                }
+                </style>
+                <p class="p-title"></p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <script>
+                    $(function(){
+                        $('.p-title').closest('.field').addClass('custom-field');
+                    });
+                </script>
+                <style>
+                .field.custom-field .name{
+                    float:none;width: auto;
+                }
+                .field.custom-field .value{
+                    display:none;
+                }
+                .p-title{
+                    font-size:120%;font-weight: bold;color: #000;
+                }
+                </style>
+                <p class="p-title"></p>		
+                ]]>
+            </name>
+        </setting>
+        
+        
+        <setting var="customization_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Customization</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Кастомизация</p>	
+                ]]>
+            </name>
+        </setting>        
+        
         <setting var="logo" control_type="image">
             <value>img/logo.png</value>
             <filename>img/logo.*</filename>
@@ -130,8 +193,8 @@
         <setting var="footer_img" control_type="image">
             <value>img/drop-1.png</value>
             <filename>img/drop-1.png</filename>
-            <name locale="en_US">Company Logo</name>
-            <name locale="ru_RU">Логотип компании</name>
+            <name locale="en_US">Footer company logo </name>
+            <name locale="ru_RU">Логотип компании в подвале</name>
         </setting>
         <setting var="bg_image" control_type="image">
             <value>img/bg/bg-main.jpg</value>
@@ -192,6 +255,24 @@
             </options>
         </setting>
         
+        
+        <setting var="basic_title" control_type="text">
+            <value></value>
+            <name locale="en_US">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Setting basic elements</p>	
+                ]]>
+            </name>
+            <name locale="ru_RU">
+                <![CDATA[
+                <hr /><br/><br/>
+                <p class="p-title">Настройка основных элементов.</p>	
+                ]]>
+            </name>
+        </setting>      
+        
+        
         <setting var="floating_top_menu" control_type="checkbox">
             <value>1</value>
             <name locale="en_US">Floating top menu</name>
@@ -201,6 +282,33 @@
             <value>1</value>
             <name locale="en_US">Use styling form elements «uniform»</name>
             <name locale="ru_RU">Использовать стилизацию элементов форм «uniform»</name>
+        </setting>
+        <setting var="uniform_theme" control_type="select">
+            <value>default2</value>
+            <name locale="en_US">Theme «uniform»</name>
+            <name locale="ru_RU">Тема оформления «uniform»</name>
+            <options>
+                <option value="default">
+                    <name locale="en_US">default</name>
+                    <name locale="ru_RU">default</name>
+                </option>
+                <option value="default2">
+                    <name locale="en_US">default2</name>
+                    <name locale="ru_RU">default2</name>
+                </option>
+                <option value="aristo">
+                    <name locale="en_US">aristo</name>
+                    <name locale="ru_RU">aristo</name>
+                </option>
+                <option value="agent">
+                    <name locale="en_US">agent</name>
+                    <name locale="ru_RU">agent</name>
+                </option>
+                <option value="jeans">
+                    <name locale="en_US">jeans</name>
+                    <name locale="ru_RU">jeans</name>
+                </option>
+            </options>
         </setting>
         
         <setting var="footer_facebook" control_type="text">
