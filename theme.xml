@@ -9,7 +9,7 @@
             <description locale="en_US">Core layout of the CUSTOM theme family</description>
             <description locale="ru_RU">Основной макет тем дизайна семейства CUSTOM</description>
         </file>
-        <file path="custom.css">
+        <file path="extreme.css">
             <description locale="en_US">Core CSS of the CUSTOM theme family</description>
             <description locale="ru_RU">Основной файл CSS-стилей семейства тем дизайна CUSTOM</description>
         </file>
@@ -41,24 +41,11 @@
             <description locale="en_US">404 and other errors</description>
             <description locale="ru_RU">404 и другие ошибки</description>
         </file>
-        <file path="custom.js" custom="0">
+        <file path="extreme.js" custom="0">
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
         </file>
-        
-        
-        <file path="blockcart.css" custom="0">
-            <description locale="en_US">CSS</description>
-            <description locale="ru_RU">CSS</description>
-        </file>
-        <file path="blockpermanentlinks.css" custom="0">
-            <description locale="en_US">CSS</description>
-            <description locale="ru_RU">CSS</description>
-        </file>
-        <file path="blocksearch.css" custom="0">
-            <description locale="en_US">CSS</description>
-            <description locale="ru_RU">CSS</description>
-        </file>
+
         <file path="responsive-tables.css" custom="0">
             <description locale="en_US">CSS</description>
             <description locale="ru_RU">CSS</description>
