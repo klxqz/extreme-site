@@ -106,7 +106,7 @@
                                 <div class="row">
                                     <nav>
                                         <div id="header_logo">
-                                            <a href="{$wa_url}"  title="[`To home`]">
+                                            <a href="{$wa_app_url}" title="{$wa->accountName()}">
                                                 <img class="logo img-responsive" src="{$wa_theme_url}{$theme_settings.logo}"  alt="{$wa->accountName()}"/>
                                             </a>
                                         </div>
@@ -271,7 +271,7 @@
                                     {elseif $theme_settings.source_main_menu == 'shop_pages' && $wa->shop}
                                         <div id="block_top_menu" class="sf-contener clearfix">
                                             <div class="cat-title">[`Information`]</div>
-                                            {if isset($page)}
+                                            {if isset($page.id)}
                                                 {$selected_page=$page.id}
                                             {else}
                                                 {$selected_page=null}
@@ -281,7 +281,7 @@
                                     {else}
                                         <div id="block_top_menu" class="sf-contener clearfix">
                                             <div class="cat-title">[`Information`]</div>
-                                            {if isset($page)}
+                                            {if isset($page.id)}
                                                 {$selected_page=$page.id}
                                             {else}
                                                 {$selected_page=null}
@@ -359,7 +359,7 @@
                                             {if $wa->user()->isAuth()}
                                                 {if $wa->shop}
                                                     <li>
-                                                        <a href="{$wa->getUrl('/frontend/search')}?list=wishlist">[`Favorites`]</a>
+                                                        <a href="{$wa->getUrl('shop/frontend/search')}?list=wishlist">[`Favorites`]</a>
                                                     </li>
                                                     <li>
                                                         <a href="{$wa->getUrl('shop/frontend/my')}">[s`My account`]</a>

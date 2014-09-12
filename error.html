@@ -1,27 +1,30 @@
 <div class="row" id="pagenotfound">
     <div class="center_column col-xs-12 col-sm-12" id="center_column">
-
         <div class="pagenotfound">
             <div class="img-404">
                 <img alt="{if $error_message}{$error_message}{else}[`Error`]{/if}" src="{$wa_theme_url}img/img-404.png">
             </div>
             <h1>
-                {if $error_code}{$error_code}. {/if}
-            {if $error_message}{$error_message}{else}[`Error`]{/if}
-        </h1>
-        <p>
-            [`The requested resource is not available.`]
-        </p>
+                {if $error_code}
+                    {$error_code}.
+                {/if}
+                {if $error_message}
+                    {$error_message}
+                {else}[`Error`]
+                {/if}
+            </h1>
+            <p>
+                [`The requested resource is not available.`]
+            </p>
 
-        <div class="buttons">
-            <a title="[`To home`]" href="{$wa_app_url}" class="btn btn-default button button-medium">
-                <span>
-                    <i class="icon-chevron-left left"></i>
-                    [`To home`]
-                </span>
-            </a>
+            <div class="buttons">
+                <a href="{$wa_app_url}" title="{$wa->accountName()}" class="btn btn-default button button-medium">
+                    <span>
+                        <i class="icon-chevron-left left"></i>
+                        [`To home`]
+                    </span>
+                </a>
+            </div>
         </div>
-    </div>
-
-</div><!-- #center_column -->
+    </div><!-- #center_column -->
 </div><!-- .row -->
