@@ -70,14 +70,6 @@
             <description locale="en_US">CSS</description>
             <description locale="ru_RU">CSS</description>
         </file>
-        <file path="uniform.default.css" custom="0">
-            <description locale="en_US">CSS</description>
-            <description locale="ru_RU">CSS</description>
-        </file>
-        <file path="blocktopmenu.js" custom="0">
-            <description locale="en_US">JS</description>
-            <description locale="ru_RU">JS</description>
-        </file>
         <file path="hoverIntent.js" custom="0">
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
