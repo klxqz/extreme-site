@@ -226,8 +226,12 @@ jQuery(function($) {
 
 
 $(document).ready(function() {
-    $("input[type='text'], input[type='password'], textarea, select").addClass('form-control');
-    $("input[type='submit'], input[type='button'], button").addClass('bt button');
+    if (use_uniform) {
+        $("select,input:not([type=submit],[type=button],.comparator),textarea").uniform();
+    } else {
+        $("input[type='text'], input[type='password'], textarea, select").addClass('form-control');
+    }
+    $("input[type='submit'], input[type='button'], button").addClass('bt button');    
 
     function HoverWatcher(selector) {
         this.hovering = false;
@@ -288,11 +292,4 @@ $(document).ready(function() {
         return false;
     });
 
-});
-
-
-$(window).load(function() {
-    if (use_uniform) {
-        $("select.form-control,input:not([type=submit],[type=button],.comparator)").uniform();
-    }
 });
