@@ -162,7 +162,7 @@
             <name locale="ru_RU">Логотип компании в подвале</name>
         </setting>
         <setting var="bg_image" control_type="image">
-            <value>img/bg/bg-main.jpg</value>
+            <value></value>
             <filename>img/bg/bg-main.*</filename>
             <name locale="en_US">Additional background</name>
             <name locale="ru_RU">Дополнительный фон</name>
@@ -173,6 +173,25 @@
             <name locale="ru_RU">Фон</name>
             <options>
                 <option value=""></option>
+                
+                <option value="img/bg/water.jpg"></option>
+                <option value="img/bg/lava3.jpg"></option>
+                <option value="img/bg/lava2.jpg"></option>
+                <option value="img/bg/lava.jpg"></option>
+                <option value="img/bg/stars2.jpg"></option>
+                <option value="img/bg/stars.jpg"></option>
+                <option value="img/bg/gravel4.jpg"></option>
+                <option value="img/bg/gravel3.jpg"></option>
+                <option value="img/bg/gravel2.jpg"></option>
+                <option value="img/bg/gravel.jpg"></option>
+                <option value="img/bg/rose.jpg"></option>
+                <option value="img/bg/graffiti2.jpg"></option>
+                <option value="img/bg/graffiti.jpg"></option>
+                <option value="img/bg/protector.jpg"></option>
+                <option value="img/bg/parket.jpg"></option>
+                <option value="img/bg/wood.jpg"></option>
+                <option value="img/bg/carbon2.jpg"></option>
+                <option value="img/bg/carbon.jpg"></option>
                 <option value="img/bg/bg-style2.gif"></option>
                 <option value="img/bg/bg-style3.jpg"></option>
                 <option value="img/bg/bg-style4.jpg"></option>
@@ -237,6 +256,12 @@
             </name>
         </setting>      
         
+        
+        <setting var="scroll_up" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Scroll up</name>
+            <name locale="ru_RU">Прокрутка вверху</name>
+        </setting>
         
         <setting var="floating_top_menu" control_type="checkbox">
             <value>1</value>
