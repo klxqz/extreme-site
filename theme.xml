@@ -126,6 +126,12 @@
                 .p-title{
                     font-size:120%;font-weight: bold;color: #000;
                 }
+                .wa-theme-image-select{
+                    max-width: 750px;
+                }
+                .wa-theme-image-select a img{
+                    height: 100px;width: 100px;
+                }
                 </style>
                 <p class="p-title"></p>		
                 ]]>
@@ -162,18 +168,24 @@
             <name locale="ru_RU">Логотип компании в подвале</name>
         </setting>
         <setting var="bg_image" control_type="image">
-            <value></value>
+            <value>img/bg/bg-main.jpg</value>
             <filename>img/bg/bg-main.*</filename>
             <name locale="en_US">Additional background</name>
             <name locale="ru_RU">Дополнительный фон</name>
         </setting>
+        <setting var="bg_image_fixed" control_type="checkbox">
+            <value>0</value>
+            <name locale="en_US">Fixed additional background</name>
+            <name locale="ru_RU">Фиксировать дополнительный фон</name>
+        </setting>
+        
+        
         <setting var="bg" control_type="image_select">
-            <value></value>
+            <value>img/bg/no_bg.png</value>
             <name locale="en_US">Background</name>
             <name locale="ru_RU">Фон</name>
             <options>
-                <option value=""></option>
-                
+                <option value="img/bg/no_bg.png">dsds</option>
                 <option value="img/bg/water.jpg"></option>
                 <option value="img/bg/lava3.jpg"></option>
                 <option value="img/bg/lava2.jpg"></option>
@@ -255,6 +267,12 @@
                 ]]>
             </name>
         </setting>      
+        
+        <setting var="is_autocomplete" control_type="checkbox">
+            <value>1</value>
+            <name locale="en_US">Auto Search products</name>
+            <name locale="ru_RU">Автопоиск товаров (выпадающий список товаров появляется при вводе первых символов). Необходимо приложение «Магазин»</name>
+        </setting>
         
         
         <setting var="scroll_up" control_type="checkbox">
@@ -441,6 +459,18 @@
             <msgid>Favorites</msgid>
             <msgstr locale="ru_RU">Избранное</msgstr>
         </locale>
-        
     </locales>
+    <about locale="en_US">
+        <![CDATA[
+        <p><b>Extreme</b> — is a family of responsive themes premium for applications: Site, Shop (Shop-Script 5), Blog, Photo. Theme "Extreme" created by a team of professional developers with current technology and innovations of web design. It is perfectly suited for the rapid deployment of the site and its promotion in search engines.</p>
+
+        ]]>
+    </about>
+    <about locale="ru_RU">
+        <![CDATA[
+        <p><b>Экстрим</b> — это семейство адаптивных тем оформления премиум класса для приложений: Сайт, Магазин (Shop-Script 5), Блог, Фото. Тема "Экстрим" создана командой профессиональных разработчиков с учетов современных технологий и новшеств веб-дизайна. Она прекрасна подходит для быстрого развертывания сайта и его продвижения в Поисковых Системах.</p>
+        <p>Тема отлично подойдет для интернет-магазинов связанных со спортом, экстримом, автомобилями и автотюнингом, но не только. Использование дополнительных цветовых схем подойдет для любых других направлений деятельности Вашего сайта.</p>
+        ]]>
+    </about>
+    
 </theme>
