@@ -230,7 +230,7 @@ jQuery(function($) {
 
 $(document).ready(function() {
     if (use_uniform) {
-        $("select,input:not([type=submit],[type=button],.comparator),textarea").uniform();
+        $("select,input:not([type=submit],[type=button],.comparator,#search_query_top),textarea").uniform();
     } else {
         $("input[type='text'], input[type='password'], textarea, select").addClass('form-control');
     }

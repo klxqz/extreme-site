@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="extreme" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.0.1">
+<theme id="extreme" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.2.0">
     <name locale="en_US">Extreme</name>
     <name locale="ru_RU">Экстрим</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
@@ -82,8 +82,18 @@
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
         </file>
-        
     </files>
+    <about locale="en_US">
+<![CDATA[
+<p><b>Extreme</b> — is a family of responsive themes premium for applications: Site, Shop (Shop-Script 5), Blog, Photo. Theme "Extreme" created by a team of professional developers with current technology and innovations of web design. It is perfectly suited for the rapid deployment of the site and its promotion in search engines.</p>
+]]>
+    </about>
+    <about locale="ru_RU">
+<![CDATA[
+<p><b>Экстрим</b> — это семейство адаптивных тем оформления премиум класса для приложений: Сайт, Магазин (Shop-Script 5), Блог, Фото. Тема "Экстрим" создана командой профессиональных разработчиков с учетов современных технологий и новшеств веб-дизайна. Она прекрасна подходит для быстрого развертывания сайта и его продвижения в Поисковых Системах.</p>
+<p>Тема отлично подойдет для интернет-магазинов связанных со спортом, экстримом, автомобилями и автотюнингом, но не только. Использование дополнительных цветовых схем подойдет для любых других направлений деятельности Вашего сайта.</p>
+]]>
+    </about>
     
     <settings>
         <setting var="main_come" control_type="text">
@@ -104,6 +114,12 @@
                 }
                 .p-title{
                     font-weight: bold;color: #000;
+                }
+                .wa-theme-image-select{
+                    max-width: 750px;
+                }
+                .wa-theme-image-select a img{
+                    height: 100px;width: 100px;
                 }
                 </style>
                 <p class="p-title"></p>	
@@ -163,7 +179,7 @@
         </setting>
         <setting var="footer_img" control_type="image">
             <value>img/drop-1.png</value>
-            <filename>img/drop-1.png</filename>
+            <filename>img/drop-1.*</filename>
             <name locale="en_US">Footer company logo </name>
             <name locale="ru_RU">Логотип компании в подвале</name>
         </setting>
@@ -185,7 +201,7 @@
             <name locale="en_US">Background</name>
             <name locale="ru_RU">Фон</name>
             <options>
-                <option value="img/bg/no_bg.png">dsds</option>
+                <option value="img/bg/no_bg.png"></option>
                 <option value="img/bg/water.jpg"></option>
                 <option value="img/bg/lava3.jpg"></option>
                 <option value="img/bg/lava2.jpg"></option>
@@ -460,17 +476,4 @@
             <msgstr locale="ru_RU">Избранное</msgstr>
         </locale>
     </locales>
-    <about locale="en_US">
-        <![CDATA[
-        <p><b>Extreme</b> — is a family of responsive themes premium for applications: Site, Shop (Shop-Script 5), Blog, Photo. Theme "Extreme" created by a team of professional developers with current technology and innovations of web design. It is perfectly suited for the rapid deployment of the site and its promotion in search engines.</p>
-
-        ]]>
-    </about>
-    <about locale="ru_RU">
-        <![CDATA[
-        <p><b>Экстрим</b> — это семейство адаптивных тем оформления премиум класса для приложений: Сайт, Магазин (Shop-Script 5), Блог, Фото. Тема "Экстрим" создана командой профессиональных разработчиков с учетов современных технологий и новшеств веб-дизайна. Она прекрасна подходит для быстрого развертывания сайта и его продвижения в Поисковых Системах.</p>
-        <p>Тема отлично подойдет для интернет-магазинов связанных со спортом, экстримом, автомобилями и автотюнингом, но не только. Использование дополнительных цветовых схем подойдет для любых других направлений деятельности Вашего сайта.</p>
-        ]]>
-    </about>
-    
 </theme>
