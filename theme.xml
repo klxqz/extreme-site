@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE theme PUBLIC "wa-app-theme" "http://www.webasyst.com/wa-content/xml/wa-app-theme.dtd">
-<theme id="extreme" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.2.0">
+<theme id="extreme" system="0" vendor="985310" author="wa-plugins.ru" app="site" version="1.4.0">
     <name locale="en_US">Extreme</name>
     <name locale="ru_RU">Экстрим</name>
     <description locale="ru_RU">Семейство адаптивных тем дизайна.</description>
@@ -10,6 +10,10 @@
             <description locale="ru_RU">Основной макет тем дизайна семейства CUSTOM</description>
         </file>
         <file path="extreme.css">
+            <description locale="en_US">Core CSS of the CUSTOM theme family</description>
+            <description locale="ru_RU">Основной файл CSS-стилей семейства тем дизайна CUSTOM</description>
+        </file>
+        <file path="extreme.min.css">
             <description locale="en_US">Core CSS of the CUSTOM theme family</description>
             <description locale="ru_RU">Основной файл CSS-стилей семейства тем дизайна CUSTOM</description>
         </file>
@@ -33,6 +37,10 @@
             <description locale="en_US">Sign up page</description>
             <description locale="ru_RU">Страница регистрации пользователей</description>
         </file>
+        <file path="sidebar.html" custom="0">
+            <description locale="en_US">Vertical menu</description>
+            <description locale="ru_RU">Вертикальное меню</description>
+        </file>
         <file path="forgotpassword.html" custom="0">
             <description locale="en_US">Forgot password page</description>
             <description locale="ru_RU">Страница сброса пароля</description>
@@ -45,12 +53,16 @@
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
         </file>
+        <file path="extreme.min.js" custom="0">
+            <description locale="en_US">JS</description>
+            <description locale="ru_RU">JS</description>
+        </file>
 
         <file path="responsive-tables.css" custom="0">
             <description locale="en_US">CSS</description>
             <description locale="ru_RU">CSS</description>
         </file>
-        <file path="superfish-modified.css" custom="0">
+        <file path="superfish-modified.min.css" custom="0">
             <description locale="en_US">CSS</description>
             <description locale="ru_RU">CSS</description>
         </file>
@@ -74,11 +86,11 @@
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
         </file>
-        <file path="superfish-modified.js" custom="0">
+        <file path="superfish-modified.min.js" custom="0">
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
         </file>
-        <file path="treeManagement.js" custom="0">
+        <file path="treeManagement.min.js" custom="0">
             <description locale="en_US">JS</description>
             <description locale="ru_RU">JS</description>
         </file>
